@@ -7,7 +7,7 @@ codex, and aider on one codebase in parallel.
 `एक कोडबेस, चार दिमाग` — one codebase, four minds.
 
 Shares its visual hand with the rest of the
-[Misc42 Labs](https://misc42labs.vercel.app/) portfolio
+[Misc42 Labs](https://misc42.github.io/misc42labs/) portfolio
 ([Sanketra](https://github.com/Misc42/sanketra),
 [Mukut](https://github.com/Misc42/mukut),
 [Tvashtra](https://github.com/Misc42/tvashtra-landing)) — same

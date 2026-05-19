@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  ["Misc42 Labs", "https://misc42labs.vercel.app/"],
+  ["Misc42 Labs", "https://misc42.github.io/misc42labs/"],
   ["GitHub", "https://github.com/Misc42/theClub"],
   ["X", "https://x.com/tanaymisra97"],
 ] as const;
@@ -25,7 +25,7 @@ export default function Footer() {
       <p className="serif-italic text-lg text-ink">
         A{" "}
         <a
-          href="https://misc42labs.vercel.app/"
+          href="https://misc42.github.io/misc42labs/"
           target="_blank"
           rel="noreferrer"
           className="text-ink underline decoration-rule underline-offset-4 transition hover:text-saffron"
