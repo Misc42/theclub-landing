@@ -6,6 +6,7 @@ import { useState } from "react";
 const LINKS: ReadonlyArray<readonly [string, string]> = [
   ["Why", "/#why"],
   ["Pipeline", "/#how"],
+  ["Interface", "/#interface"],
   ["Cast", "/#cast"],
   ["Install", "/#install"],
   ["FAQ", "/#faq"],
