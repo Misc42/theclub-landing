@@ -1,53 +1,102 @@
+// "Why" section — editorial spread. Left column is a manifesto with a drop
+// cap + pull-quote. Right column is a small ledger of countermeasures.
+
+const COUNTERS: ReadonlyArray<{ k: string; v: string }> = [
+  {
+    k: "Direct stream-json transport",
+    v: "Each CLI is spawned non-interactively with NDJSON output. No pty, no TUI, no banner that can jam the pipeline.",
+  },
+  {
+    k: "One worktree per agent",
+    v: "Each agent edits in its own git branch. Parallel work, structured merges, surgical rollback if a worker breaks the build.",
+  },
+  {
+    k: "Cheap-path classifier",
+    v: "A trivial goal goes to a single agent in under 90 seconds. Complex multi-verb goals fan out across all four — heuristic decides without burning a model call.",
+  },
+  {
+    k: "Local · BYO keys",
+    v: "Tauri desktop on your machine. Your claude / gemini / openai / openrouter keys. Zero analytics, zero telemetry, zero cloud middleware.",
+  },
+];
+
 export default function Problem() {
   return (
-    <section id="why" className="wrap border-b border-rule py-20">
-      <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
-        <div>
-          <p className="masthead mb-5">Why &middot; the problem</p>
-          <h2 className="section-title max-w-xl">
-            One agent isn&apos;t enough.{" "}
-            <span className="serif-italic text-saffron">Five tabs aren&apos;t serious.</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-            Every coding agent CLI has a strength &mdash; claude on
-            architecture, gemini on big-context research, codex on terminal
-            ops, aider on surgical multi-file diffs. Most days you need two or
-            three of them on the same problem, but switching contexts is
-            friction and merging their work by hand is worse.
+    <section id="why" className="wrap mt-28 md:mt-36">
+      {/* Section mark */}
+      <header className="rule-double pb-4">
+        <p className="dispatch-mark">
+          <span className="dot" aria-hidden />
+          The Problem · Editorial
+        </p>
+        <h2 className="section-title mt-3 max-w-3xl">
+          One agent isn&apos;t enough.{" "}
+          <span className="serif-italic text-saffron">
+            Five tabs aren&apos;t serious.
+          </span>
+        </h2>
+      </header>
+
+      <div className="mt-12 grid gap-14 lg:grid-cols-[1.15fr_1fr]">
+        {/* Editorial column */}
+        <article className="text-base leading-[1.75] text-muted md:text-[1.04rem]">
+          <p className="drop-cap">
+            Every coding agent CLI has a strength the others don&apos;t.
+            claude is best at high-level architecture and review. gemini
+            reads enormous contexts. codex is sharp on terminal and devops
+            chores. aider does surgical multi-file diffs nobody else
+            matches. Most working days you need two or three of them on the
+            same problem at once.
           </p>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-            Existing wrappers proxy each CLI through a pseudo-terminal layer
-            (agentapi-style). Every mid-run interactive prompt &mdash; an
-            update banner, an edit-accept gate, a policy confirmation &mdash;
-            jams the wrapper. The orchestrator stalls. The pipeline aborts.
-            <span className="text-ink"> theClub goes around that whole problem.</span>
+          <p className="mt-5">
+            Most existing wrappers proxy each CLI through a pseudo-terminal
+            layer. It works until it doesn&apos;t. A codex update banner, a
+            gemini edit-accept dialog, a claude policy confirmation
+            mid-execution &mdash; every one of those interactive surfaces
+            jams the wrapper, the orchestrator stalls, the pipeline aborts.
+            We learned this the hard way across four live runs.
           </p>
-        </div>
-        <ul className="grid gap-4 self-start">
-          {[
-            {
-              k: "Direct stream-json transport",
-              v: "Spawn each CLI in non-interactive mode with NDJSON output. No pty, no TUI, no prompts that can hang the pipeline.",
-            },
-            {
-              k: "One worktree per agent",
-              v: "Each agent edits in its own git branch. Parallel work, structured merges, surgical rollback if a worker breaks the build.",
-            },
-            {
-              k: "8-phase orchestration",
-              v: "Analyse → clarify → plan → dispatch → execute → review → merge → verify. Cheap-path classifier short-circuits trivial tasks to a single agent.",
-            },
-            {
-              k: "Local, BYO keys",
-              v: "Runs on your machine. Your claude / gemini / codex / openrouter keys. No analytics, no telemetry, no cloud middleware.",
-            },
-          ].map(({ k, v }) => (
-            <li key={k} className="card">
-              <p className="serif-italic text-lg text-ink">{k}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{v}</p>
-            </li>
-          ))}
-        </ul>
+
+          <blockquote className="pull mt-8">
+            theClub doesn&apos;t paper over the pty problem.{" "}
+            <span className="text-saffron">It removes the pty.</span>
+          </blockquote>
+
+          <p className="mt-8">
+            Each agent now spawns directly with native stream-json flags.
+            No terminal means no prompts can render, which means no
+            interactive surface can break the run. The fix is architectural
+            &mdash; not a config tweak, not a flag soup, not a vendored
+            wrapper that&apos;ll rot the next time a CLI releases a
+            confirmation dialog. The 8-phase pipeline that drives the four
+            agents stays the same; the transport underneath got replaced.
+          </p>
+        </article>
+
+        {/* Countermeasures ledger */}
+        <aside>
+          <p className="masthead mb-4">What theClub does instead</p>
+          <ul className="grid gap-3">
+            {COUNTERS.map(({ k, v }, i) => (
+              <li
+                key={k}
+                className="grid grid-cols-[2.4rem_1fr] gap-3 border-t border-rule pt-4"
+              >
+                <span className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-saffron pt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p className="serif-italic text-lg leading-tight text-ink">
+                    {k}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {v}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </div>
     </section>
   );

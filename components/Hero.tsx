@@ -1,91 +1,99 @@
 import Link from "next/link";
+import Score from "@/components/Score";
 
 export default function Hero() {
   return (
-    <section className="wrap grid gap-14 border-b border-rule pb-20 pt-12 lg:grid-cols-[0.95fr_1fr] lg:items-center">
-      <div className="flex flex-col items-start">
-        <p className="masthead mb-5">theClub &middot; Misc42 Labs</p>
-        <h1 className="section-title max-w-xl">
-          One codebase.
-          <br />
-          <span className="text-saffron">Four minds.</span>
-        </h1>
-        <p
-          className="deva mt-6 text-[clamp(1.8rem,4vw,2.8rem)] leading-[1.1] text-saffron"
-          lang="hi"
-        >
-          एक कोडबेस, चार दिमाग
+    <section className="wrap pt-6 md:pt-10">
+      {/* Dispatch masthead — issue / date / edition */}
+      <div className="flex flex-wrap items-center justify-between gap-4 rule-double pb-4 mb-12 md:mb-16">
+        <p className="dispatch-mark">
+          <span className="dot" aria-hidden />
+          A Misc42 Labs dispatch
         </p>
-        <p className="serif-italic mt-3 text-[clamp(1.2rem,2.4vw,1.6rem)] leading-snug text-muted">
-          A local desktop orchestrator that runs claude, gemini, codex, and aider
-          on the same project in parallel &mdash; and merges their work cleanly.
+        <p className="dispatch-mark">
+          Volume 06 &middot; Edition 2026 &middot; Linux
         </p>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-          Each agent works in its own git worktree. An 8-phase pipeline drives
-          them through analyse, plan, execute, review, merge, verify. Direct
-          NDJSON stream-json transport &mdash; no pty wrappers, no cloud
-          middleware, no mystery prompts mid-run. Your API keys, your machine,
-          your code.
-        </p>
-        <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link
-            href="https://github.com/Misc42/theClub"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm border border-saffron bg-saffron px-5 py-3 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-paper transition hover:bg-transparent hover:text-saffron"
-          >
-            See on GitHub
-            <span aria-hidden>&rarr;</span>
-          </Link>
-          <Link
-            href="#how"
-            className="inline-flex items-center gap-2 border-b border-rule pb-2 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-ink transition hover:border-saffron hover:text-saffron"
-          >
-            How it works
-            <span aria-hidden>&darr;</span>
-          </Link>
-        </div>
       </div>
-      <figure className="card overflow-hidden">
-        <div className="relative aspect-[4/3] w-full bg-paper">
-          <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-3 p-6">
-            {[
-              { name: "Claude Code", role: "Orchestrator", color: "var(--accent-warm)" },
-              { name: "Gemini CLI", role: "Research", color: "#8B5CF6" },
-              { name: "Codex CLI", role: "Terminal", color: "#3B82F6" },
-              { name: "Aider", role: "Multi-file", color: "var(--accent)" },
-            ].map((agent) => (
-              <div
-                key={agent.name}
-                className="flex flex-col justify-between rounded-md border border-rule bg-surface p-4"
-              >
-                <div className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-                  <span
-                    className="inline-block h-2 w-2 rounded-full"
-                    style={{ background: agent.color }}
-                  />
-                  Stable
-                </div>
-                <div>
-                  <p
-                    className="serif-italic text-lg leading-tight"
-                    style={{ color: agent.color }}
-                  >
-                    {agent.name}
-                  </p>
-                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-faint">
-                    {agent.role}
-                  </p>
-                </div>
-              </div>
-            ))}
+
+      {/* Hero composition — the Devanagari line is the centerpiece, English plays
+          the supporting role above it. Stamp + meta sit beneath in a deliberate
+          asymmetric column. */}
+      <div className="grid gap-10 lg:grid-cols-[1fr_auto_1.05fr] lg:items-center">
+        {/* LEFT — English supporting headline + supporting body */}
+        <div className="order-2 lg:order-1">
+          <p className="masthead mb-5">theClub &middot; v0.6.0</p>
+          <h1 className="section-title text-balance">
+            One codebase.
+            <br />
+            <span className="serif-italic text-saffron">Four minds.</span>
+          </h1>
+          <p className="serif-italic mt-5 max-w-md text-[clamp(1.1rem,2vw,1.35rem)] leading-snug text-muted">
+            A workshop instrument for the developer who already pays for
+            <span className="text-ink"> claude</span>,
+            <span className="text-ink"> gemini</span>,
+            <span className="text-ink"> codex</span>, and
+            <span className="text-ink"> aider</span> &mdash; and wants them
+            playing in the same orchestra, not four separate tabs.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Link
+              href="https://github.com/Misc42/theClub"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-sm border border-saffron bg-saffron px-5 py-3 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-paper transition hover:bg-transparent hover:text-saffron"
+            >
+              Read the source
+              <span aria-hidden>&rarr;</span>
+            </Link>
+            <Link
+              href="#how"
+              className="inline-flex items-center gap-2 border-b border-rule pb-2 font-mono text-[0.74rem] uppercase tracking-[0.14em] text-ink transition hover:border-saffron hover:text-saffron"
+            >
+              See the pipeline
+              <span aria-hidden>&darr;</span>
+            </Link>
           </div>
         </div>
-        <figcaption className="flex items-center justify-between gap-4 border-t border-rule px-5 py-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-faint">
-          <span>4 agents, 4 worktrees, 1 codebase</span>
-          <span className="text-saffron">v0.6.0 &middot; Linux</span>
-        </figcaption>
-      </figure>
+
+        {/* MIDDLE — vertical hairline rule separating English from Devanagari.
+            On mobile this collapses; on desktop it doubles as a visual seam.  */}
+        <div
+          aria-hidden
+          className="order-1 hidden h-full w-px lg:order-2 lg:block"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent-warm) 35%, transparent), transparent)",
+          }}
+        />
+
+        {/* RIGHT — THE moment. Devanagari typography at full editorial scale. */}
+        <figure className="order-3 flex flex-col items-start gap-4 lg:items-end lg:text-right">
+          <p
+            className="deva ink-press text-[clamp(2.8rem,7vw,5.4rem)] leading-[0.98] tracking-tight text-ink"
+            lang="hi"
+            style={{
+              textShadow:
+                "0 0 38px color-mix(in srgb, var(--accent-warm) 22%, transparent)",
+            }}
+          >
+            एक कोडबेस,
+            <br />
+            <span className="text-saffron">चार दिमाग।</span>
+          </p>
+          <figcaption className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-faint">
+            one codebase &middot; four minds
+          </figcaption>
+          <span className="stamp mt-3">
+            <span aria-hidden>&#x2715;</span>
+            v0.6.0 &middot; live on Linux
+          </span>
+        </figure>
+      </div>
+
+      {/* The score visual — the moment that earns "four agents working in parallel". */}
+      <div className="mt-20 md:mt-24">
+        <Score />
+      </div>
     </section>
   );
 }
