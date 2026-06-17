@@ -76,9 +76,9 @@ export default function Hero() {
                 "0 0 38px color-mix(in srgb, var(--accent-warm) 22%, transparent)",
             }}
           >
-            आपका कोड।
+            एक कोडबेस,
             <br />
-            <span className="text-saffron">आपकी चाबी।</span>
+            <span className="text-saffron">चार दिमाग।</span>
           </p>
           <figcaption className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-faint">
             your code &middot; your keys

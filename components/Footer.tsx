@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-wrap items-baseline justify-between gap-3 border-t border-rule pt-4 font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
           <span>&copy; 2026 &middot; Tanay Misra &middot; Bharat</span>
-          <span className="text-saffron">आपका कोड, आपकी चाबी</span>
+          <span className="text-saffron">एक कोडबेस, चार दिमाग</span>
         </div>
       </div>
     </footer>

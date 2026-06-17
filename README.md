@@ -6,7 +6,7 @@ machine. Your claude / gemini / codex subscriptions, a fully local model over
 Ollama, or any mix — provider-neutral, locked to none. Code and keys never
 leave the box.
 
-`आपका कोड, आपकी चाबी` — your code, your keys.
+`एक कोडबेस, चार दिमाग` — one codebase, four minds.
 
 Shares its visual hand with the rest of the
 [Misc42 Labs](https://misc42.github.io/misc42labs/) portfolio
