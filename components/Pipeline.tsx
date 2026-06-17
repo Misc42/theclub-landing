@@ -91,8 +91,10 @@ export default function Pipeline() {
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
           Each phase has a strict contract &mdash; what comes in, what goes
-          out, how it fails. Cheap-path tasks skip the heavy stages.
-          Complex multi-verb goals fan out across all four agents.
+          out, how it fails. Cheap-path tasks skip the heavy stages. Complex
+          goals fan out across whichever agents you&apos;ve wired up &mdash;
+          provider CLIs, a local model, or both at once. The pipeline is the
+          same; the agents under it are yours.
         </p>
       </header>
 

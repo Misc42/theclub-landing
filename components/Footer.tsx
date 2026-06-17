@@ -34,7 +34,7 @@ export default function Footer() {
               studio uses &mdash; same paper, same press.
             </p>
             <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
-              No analytics &middot; no telemetry &middot; no cloud middleware
+              Provider-neutral &middot; local-first &middot; no analytics &middot; no telemetry
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-3 font-mono text-[0.7rem] uppercase tracking-[0.2em] lg:justify-end">
@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-wrap items-baseline justify-between gap-3 border-t border-rule pt-4 font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
           <span>&copy; 2026 &middot; Tanay Misra &middot; Bharat</span>
-          <span className="text-saffron">एक कोडबेस, चार दिमाग</span>
+          <span className="text-saffron">आपका कोड, आपकी चाबी</span>
         </div>
       </div>
     </footer>

@@ -15,8 +15,8 @@ const COUNTERS: ReadonlyArray<{ k: string; v: string }> = [
     v: "A trivial goal goes to a single agent in under 90 seconds. Complex multi-verb goals fan out across all four — heuristic decides without burning a model call.",
   },
   {
-    k: "Local · BYO keys",
-    v: "Tauri desktop on your machine. Your claude / gemini / openai / openrouter keys. Zero analytics, zero telemetry, zero cloud middleware.",
+    k: "Local · neutral · BYO",
+    v: "Tauri desktop on your machine. Your claude / gemini / openai / openrouter keys — or a fully local model over Ollama, no provider account at all. Code and keys never leave the box. Zero analytics, zero telemetry, zero cloud middleware.",
   },
 ];
 
@@ -27,12 +27,12 @@ export default function Problem() {
       <header className="rule-double pb-4">
         <p className="dispatch-mark">
           <span className="dot" aria-hidden />
-          The Problem · Editorial
+          The Wedge · Editorial
         </p>
         <h2 className="section-title mt-3 max-w-3xl">
-          One agent isn&apos;t enough.{" "}
+          Every agent. None of them in charge.{" "}
           <span className="serif-italic text-saffron">
-            Five tabs aren&apos;t serious.
+            That part can&apos;t be bought.
           </span>
         </h2>
       </header>
@@ -41,41 +41,47 @@ export default function Problem() {
         {/* Editorial column */}
         <article className="text-base leading-[1.75] text-muted md:text-[1.04rem]">
           <p className="drop-cap">
-            Every coding agent CLI has a strength the others don&apos;t.
-            claude is best at high-level architecture and review. gemini
-            reads enormous contexts. codex is sharp on terminal and devops
-            chores. aider does surgical multi-file diffs nobody else
-            matches. Most working days you need two or three of them on the
-            same problem at once.
+            Autonomous multi-agent coding is no longer rare &mdash; every
+            funded lab ships it now. What none of them can ship is
+            neutrality. Their orchestrator routes you toward their model and
+            their per-seat plan, because that is the business. theClub runs
+            on your machine and drives whatever you already own &mdash; the
+            claude, gemini, and codex subscriptions you pay for, a fully
+            local model over Ollama, or any mix &mdash; and earns nothing
+            from which one you pick.
           </p>
           <p className="mt-5">
-            Most existing wrappers proxy each CLI through a pseudo-terminal
-            layer. It works until it doesn&apos;t. A codex update banner, a
-            gemini edit-accept dialog, a claude policy confirmation
-            mid-execution &mdash; every one of those interactive surfaces
-            jams the wrapper, the orchestrator stalls, the pipeline aborts.
-            We learned this the hard way across four live runs.
+            And neutrality isn&apos;t a slogan here &mdash; it is wired in.
+            Alongside the provider CLIs, theClub now drives any model
+            directly through a native adapter: any OpenAI-compatible,
+            Anthropic, or Ollama endpoint, no vendor CLI required. A local
+            Qwen-Coder over Ollama has already run a task end to end
+            &mdash; dispatch, edit, review, merge &mdash; with two local
+            models working in parallel. Any model, even fully local. No
+            provider lock.
           </p>
 
           <blockquote className="pull mt-8">
-            theClub doesn&apos;t paper over the pty problem.{" "}
-            <span className="text-saffron">It removes the pty.</span>
+            A funded incumbent can&apos;t be neutral &mdash; neutrality
+            cannibalises its own model and per-seat revenue.{" "}
+            <span className="text-saffron">theClub has nothing to protect.</span>
           </blockquote>
 
           <p className="mt-8">
-            Each agent now spawns directly with native stream-json flags.
-            No terminal means no prompts can render, which means no
-            interactive surface can break the run. The fix is architectural
-            &mdash; not a config tweak, not a flag soup, not a vendored
-            wrapper that&apos;ll rot the next time a CLI releases a
-            confirmation dialog. The 8-phase pipeline that drives the four
-            agents stays the same; the transport underneath got replaced.
+            Under the hood the orchestration is honest engineering, not
+            magic: each agent spawns non-interactively with native
+            stream-json flags, so no terminal prompt can jam a run, and the
+            8-phase pipeline coordinates them in parallel across isolated git
+            worktrees. The funded incumbents have all of that too. What they
+            structurally cannot give you is a layer that sits on your
+            hardware, drives your subscriptions, and is loyal to no provider.
+            That is the whole point.
           </p>
         </article>
 
         {/* Countermeasures ledger */}
         <aside>
-          <p className="masthead mb-4">What theClub does instead</p>
+          <p className="masthead mb-4">What makes it un-copyable</p>
           <ul className="grid gap-3">
             {COUNTERS.map(({ k, v }, i) => (
               <li

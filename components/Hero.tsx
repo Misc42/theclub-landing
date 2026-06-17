@@ -11,7 +11,7 @@ export default function Hero() {
           A Misc42 Labs dispatch
         </p>
         <p className="dispatch-mark">
-          Volume 06 &middot; Edition 2026 &middot; Linux
+          Volume 06 &middot; Edition 2026 &middot; Local-first &middot; Linux
         </p>
       </div>
 
@@ -21,19 +21,19 @@ export default function Hero() {
       <div className="grid gap-10 lg:grid-cols-[1fr_auto_1.05fr] lg:items-center">
         {/* LEFT — English supporting headline + supporting body */}
         <div className="order-2 lg:order-1">
-          <p className="masthead mb-5">theClub &middot; v0.6.0</p>
+          <p className="masthead mb-5">theClub &middot; the Switzerland of coding agents</p>
           <h1 className="section-title text-balance">
-            One codebase.
+            Your subscriptions. Your models.
             <br />
-            <span className="serif-italic text-saffron">Four minds.</span>
+            <span className="serif-italic text-saffron">Your machine.</span>
           </h1>
           <p className="serif-italic mt-5 max-w-md text-[clamp(1.1rem,2vw,1.35rem)] leading-snug text-muted">
-            A workshop instrument for the developer who already pays for
+            The neutral, local layer that drives every provider&apos;s coding
+            agent on your own machine &mdash; the
             <span className="text-ink"> claude</span>,
-            <span className="text-ink"> gemini</span>,
-            <span className="text-ink"> codex</span>, and
-            <span className="text-ink"> aider</span> &mdash; and wants them
-            playing in the same orchestra, not four separate tabs.
+            <span className="text-ink"> gemini</span>, and
+            <span className="text-ink"> codex</span> subscriptions you already
+            pay for, a fully local model, or any mix. Locked to none.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
@@ -76,21 +76,21 @@ export default function Hero() {
                 "0 0 38px color-mix(in srgb, var(--accent-warm) 22%, transparent)",
             }}
           >
-            एक कोडबेस,
+            आपका कोड।
             <br />
-            <span className="text-saffron">चार दिमाग।</span>
+            <span className="text-saffron">आपकी चाबी।</span>
           </p>
           <figcaption className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-faint">
-            one codebase &middot; four minds
+            your code &middot; your keys
           </figcaption>
           <span className="stamp mt-3">
             <span aria-hidden>&#x2715;</span>
-            v0.6.0 &middot; live on Linux
+            provider-neutral &middot; local-first &middot; Linux
           </span>
         </figure>
       </div>
 
-      {/* The score visual — the moment that earns "four agents working in parallel". */}
+      {/* The score visual — the moment that earns "your agents, working in parallel". */}
       <div className="mt-20 md:mt-24">
         <Score />
       </div>

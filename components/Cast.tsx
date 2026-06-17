@@ -63,13 +63,16 @@ export default function Cast() {
           The Cast · Dramatis Personae
         </p>
         <h2 className="section-title mt-3 max-w-3xl">
-          Four CLIs.{" "}
+          The agents you own.{" "}
           <span className="serif-italic text-saffron">Each plays to type.</span>
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
-          theClub doesn&apos;t average the four agents into a single
-          mediocre voice. Each one keeps its character &mdash; the
-          orchestrator plays each to its strength.
+          These are the CLIs you already pay for, driven on your own
+          machine &mdash; locked to none of them. Each keeps its character;
+          theClub plays each to its strength. Prefer to skip the vendors
+          entirely? A native direct-API adapter drives any
+          OpenAI-compatible, Anthropic, or Ollama model the same way &mdash;
+          a fully local Qwen-Coder included.
         </p>
       </header>
 

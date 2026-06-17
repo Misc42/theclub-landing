@@ -41,24 +41,24 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://misc42.github.io/theclub-landing"),
   title: {
-    default: "theClub — one codebase, four minds",
+    default: "theClub — the Switzerland of coding agents",
     template: "%s — theClub",
   },
   description:
-    "A local desktop orchestrator that runs four coding CLIs on one codebase in parallel — claude, gemini, codex, aider — through an 8-phase pipeline. No pty wrappers, no cloud middleware. Open source.",
+    "The neutral, local layer that drives every provider's coding agent on your machine — your claude / gemini / codex subscriptions, a fully local model, or any mix. Code and keys never leave your machine. Provider-neutral, locked to none. Open source.",
   openGraph: {
-    title: "theClub — one codebase, four minds",
+    title: "theClub — the Switzerland of coding agents",
     description:
-      "Multi-agent coding orchestrator. Stream-JSON NDJSON adapters. Tauri + Rust. Linux v1. Open source.",
+      "Neutral, local-first. Drive any coding agent — the subscriptions you already pay for, or a fully local model — on your own machine. Provider-neutral, locked to none. Tauri + Rust. Linux v1. Open source.",
     siteName: "theClub",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "theClub — one codebase, four minds",
+    title: "theClub — the Switzerland of coding agents",
     description:
-      "Multi-agent coding orchestrator. claude + gemini + codex + aider on one codebase.",
+      "The neutral, local layer that drives any coding agent — your subscriptions, or a fully local model — on your own machine.",
   },
   icons: {
     icon: "/favicon.svg",

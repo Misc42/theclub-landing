@@ -29,7 +29,7 @@ export default function Nav() {
           className="hidden h-3 w-px bg-rule sm:inline-block"
         />
         <span className="deva hidden text-base italic normal-case tracking-normal text-muted transition group-hover:text-saffron sm:inline-block">
-          एक कोडबेस, चार दिमाग
+          आपका कोड, आपकी चाबी
         </span>
       </Link>
       <nav className="hidden items-center gap-6 md:flex">

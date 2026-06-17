@@ -1,10 +1,12 @@
 # theclub-landing
 
-Public landing page for [theClub](https://github.com/Misc42/theClub) — a
-local desktop multi-agent coding orchestrator that runs claude, gemini,
-codex, and aider on one codebase in parallel.
+Public landing page for [theClub](https://github.com/Misc42/theClub) — the
+neutral, local layer that drives every provider's coding agent on your own
+machine. Your claude / gemini / codex subscriptions, a fully local model over
+Ollama, or any mix — provider-neutral, locked to none. Code and keys never
+leave the box.
 
-`एक कोडबेस, चार दिमाग` — one codebase, four minds.
+`आपका कोड, आपकी चाबी` — your code, your keys.
 
 Shares its visual hand with the rest of the
 [Misc42 Labs](https://misc42.github.io/misc42labs/) portfolio
