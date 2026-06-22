@@ -18,7 +18,7 @@ export default function Nav() {
 
   return (
     <header className="wrap flex items-center justify-between py-7 font-mono text-[0.78rem] uppercase tracking-[0.08em] text-faint">
-      {/* Wordmark — theClub in roman, Hindi tagline in italic Devanagari beside it */}
+      {/* Wordmark — theClub in roman, tagline in italic serif beside it */}
       <Link
         href="/"
         className="group flex items-baseline gap-3 text-ink"
@@ -28,8 +28,8 @@ export default function Nav() {
           aria-hidden
           className="hidden h-3 w-px bg-rule sm:inline-block"
         />
-        <span className="deva hidden text-base italic normal-case tracking-normal text-muted transition group-hover:text-saffron sm:inline-block">
-          एक कोडबेस, चार दिमाग
+        <span className="serif-italic hidden text-base normal-case tracking-normal text-muted transition group-hover:text-saffron sm:inline-block">
+          one codebase, many minds
         </span>
       </Link>
       <nav className="hidden items-center gap-6 md:flex">

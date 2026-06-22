@@ -1,6 +1,8 @@
 // Vertical filmstrip of the 8 phases. Each row has a phase-number bullet, a
 // title + body, and a row of agent-coloured claim bars showing who runs that
 // phase. The bullets connect via a saffron rail running down the left side.
+// The four named agents are illustrative supported examples; the roster is
+// open, so a real run can assign phases to any configured agent.
 
 type AgentKey = "claude" | "gemini" | "codex" | "aider";
 
@@ -90,11 +92,11 @@ export default function Pipeline() {
           <span className="serif-italic text-saffron">one merged commit out.</span>
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
-          Each phase has a strict contract &mdash; what comes in, what goes
-          out, how it fails. Cheap-path tasks skip the heavy stages. Complex
-          goals fan out across whichever agents you&apos;ve wired up &mdash;
-          provider CLIs, a local model, or both at once. The pipeline is the
-          same; the agents under it are yours.
+          This is the part a bare worktree runner doesn&apos;t have. Each
+          phase has a strict contract &mdash; what comes in, what goes out,
+          how it fails &mdash; and the loop runs autonomously, no human on
+          every diff. Cheap-path tasks skip the heavy stages. Complex
+          multi-verb goals fan out across the whole roster.
         </p>
       </header>
 

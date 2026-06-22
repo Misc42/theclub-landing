@@ -52,10 +52,12 @@ export default function HowItWorks() {
         <span className="serif-italic text-saffron">end to end.</span>
       </h2>
       <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-        One goal in, one merged commit out. Each phase has a strict contract:
+        One goal in, one merged commit out &mdash; an autonomous loop, not a
+        worktree runner waiting on you. Each phase has a strict contract:
         what comes in, what goes out, how it fails. Cheap-path tasks (single
         agent, &lt; 90s) skip the heavy stages. Complex multi-verb goals fan
-        out across all four agents.
+        out across the whole roster. The CLIs below are illustrative
+        examples &mdash; bring your own, or point a phase at a local model.
       </p>
       <ol className="mt-12 grid gap-4 md:grid-cols-2">
         {phases.map((p) => (

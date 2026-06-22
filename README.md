@@ -1,12 +1,13 @@
 # theclub-landing
 
-Public landing page for [theClub](https://github.com/Misc42/theClub) — the
-neutral, local layer that drives every provider's coding agent on your own
-machine. Your claude / gemini / codex subscriptions, a fully local model over
-Ollama, or any mix — provider-neutral, locked to none. Code and keys never
-leave the box.
+Public landing page for [theClub](https://github.com/Misc42/theClub) — a
+local desktop orchestrator for the coding CLIs you already pay for (Claude
+Code, Codex, Gemini CLI), local models, or any mix. An open roster of N
+agents on your repo, on your machine, driven by an autonomous 8-phase
+plan → review → merge pipeline with a live flow-graph — no cloud sandbox,
+no forced PR.
 
-`एक कोडबेस, चार दिमाग` — one codebase, four minds.
+One codebase, many minds.
 
 Shares its visual hand with the rest of the
 [Misc42 Labs](https://misc42.github.io/misc42labs/) portfolio
@@ -22,7 +23,7 @@ paper-black, same type stack, same restraint.
 - Tailwind 4 (CSS-first config in `app/globals.css`)
 - TypeScript 5
 - pnpm 10
-- Fonts via `next/font`: IBM Plex Sans, IBM Plex Mono, Instrument Serif, Tiro Devanagari Hindi
+- Fonts via `next/font`: IBM Plex Sans, IBM Plex Mono, Instrument Serif
 
 No runtime backend. No forms. Read-only marketing site that links out to
 the GitHub repo for installation.

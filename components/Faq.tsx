@@ -3,24 +3,24 @@
 
 const QA: ReadonlyArray<{ q: string; a: string }> = [
   {
-    q: "Why four agents and not one big model?",
-    a: "Each CLI has a strength the others don't. claude is sharpest on high-level architecture and review, gemini absorbs huge contexts, codex handles terminal and devops chores, aider does surgical multi-file diffs that nobody else matches. theClub plays each to its strength inside one pipeline — analyse with gemini, plan with claude, execute with aider and codex, review back with claude. When the goal is trivial the cheap-path classifier short-circuits all of that to a single agent. And you're not boxed into those four: a native direct-API adapter drives any OpenAI-compatible, Anthropic, or Ollama model — including a fully local one — into the exact same pipeline.",
+    q: "Why many agents and not one big model?",
+    a: "Because different agents have different strengths, and you don't have to pick just one. Claude Code is sharpest on high-level architecture and review, Gemini absorbs huge contexts, Codex handles terminal and devops chores, a local model is free and private. theClub plays each to its strength inside one pipeline — analyse with one, plan with another, execute in parallel, review back with a strong reasoner. The roster is open: any OpenAI-compatible or Anthropic endpoint, a local Ollama model, or the CLIs you already pay for. When the goal is trivial the cheap-path classifier short-circuits all of that to a single agent.",
   },
   {
-    q: "Why not just open four terminals?",
-    a: "Because reconciling four parallel diffs by hand is awful. Each agent in theClub edits in its own git worktree (parallel, no stomping). The orchestrator collects diffs, runs one review pass, and merges only what survives — with surgical rollback that bisects bad merges to find the culprit while preserving the good work. Hours of manual reconciliation collapse into seconds.",
+    q: "How is this different from a worktree runner?",
+    a: "A worktree runner gives you N parallel branches and stops there — you're still the human reading every diff and deciding what merges. theClub is not just a worktree runner; it's an autonomous pipeline on top of one. It runs the full plan → review → merge loop itself: collects diffs, scores each against the plan, merges only what survives — with surgical rollback that bisects bad merges to find the culprit while preserving good work — and shows the whole run as a live flow-graph. Hours of manual reconciliation collapse into seconds, and you stay on your machine the whole time.",
+  },
+  {
+    q: "Can cloud orchestrators copy this?",
+    a: "Not without abandoning their model. The per-seat, cloud-sandbox, pull-request incumbents run your code on their infrastructure and hand you a PR to review. theClub runs N agents locally — your repo, your machine, your worktrees, no forced PR — and merges autonomously where you want it to. That local, BYO-CLI, no-sandbox posture is the structural moat: a cloud sandbox business can't ship it without becoming a different product.",
   },
   {
     q: "Does this send my code anywhere?",
-    a: "Only to the model providers you choose to authenticate — and if you point it at a local model over Ollama, nothing leaves the machine at all. theClub itself is a local Tauri desktop app: no analytics, no telemetry, no cloud sandbox, no middleware. Each CLI talks to its own backend (claude / gemini / openai / openrouter) directly with your keys; the orchestrator just shuffles inputs and outputs between git worktrees on your hardware.",
+    a: "Only to the model providers you've authenticated. theClub itself is a local Tauri desktop app — no analytics, no telemetry, no cloud middleware, no cloud sandbox. Each agent talks to its own backend directly with your keys — Claude / Gemini / OpenAI / OpenRouter, any OpenAI-compatible or Anthropic endpoint, or a local model that never leaves the box. The orchestrator just shuffles inputs and outputs between worktrees on your machine.",
   },
   {
     q: "What happened to agentapi?",
     a: "v0.5.x wrapped each CLI through agentapi's pseudo-terminal proxy. Every mid-run prompt — codex update banners, gemini edit-accept gates, claude policy confirmations — could jam the wrapper and abort the pipeline. v0.6.0 removed the pty layer entirely: each adapter spawns its CLI directly with stream-json flags. No terminal means no prompts can render. The fix is in the architecture, not in config tweaks.",
-  },
-  {
-    q: "How is this different from Replit Agent, Cognition, or GitHub's agent?",
-    a: "Those are excellent cloud products — and that's exactly the difference. They run on the vendor's compute, route you toward the vendor's model, and bill per seat, because that is their business. theClub runs on your machine, drives the subscriptions you already own (or a fully local model), resells no compute, and charges nothing per seat. A funded incumbent structurally can't be neutral — neutrality would cannibalise its own model and seat revenue. theClub has nothing to protect, so it can be loyal to no provider. That's the moat.",
   },
   {
     q: "Linux only?",

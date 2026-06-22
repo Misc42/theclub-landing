@@ -1,6 +1,8 @@
-// Conductor's score — four horizontal staves, one per agent. Coloured event
-// marks across the timeline show where each agent acts. Vertical hairlines
-// mark phase boundaries (0..8). A saffron playhead sweeps left → right.
+// Conductor's score — a worked example with four staves, one per agent.
+// Coloured event marks across the timeline show where each agent acts.
+// Vertical hairlines mark phase boundaries (0..8). A saffron playhead sweeps
+// left → right. The four CLIs shown are illustrative supported examples — the
+// roster is open, so a real run can field more or fewer agents.
 // All CSS / inline SVG — no JS state, no external deps.
 
 type Agent = {
@@ -72,13 +74,13 @@ export default function Score() {
     <figure className="card-thick relative overflow-hidden">
       <header className="flex flex-wrap items-end justify-between gap-2 border-b border-rule pb-4">
         <div>
-          <p className="masthead">A goal, scored for four agents</p>
+          <p className="masthead">A goal, scored for many agents</p>
           <h2 className="serif-italic mt-2 text-[clamp(1.4rem,2.2vw,1.9rem)] leading-tight">
-            <span className="text-ink">8 phases, 4 voices, one merged commit.</span>
+            <span className="text-ink">8 phases, N voices, one merged commit.</span>
           </h2>
         </div>
         <p className="font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
-          read left &rarr; right &middot; one run
+          read left &rarr; right &middot; one run &middot; example roster
         </p>
       </header>
 

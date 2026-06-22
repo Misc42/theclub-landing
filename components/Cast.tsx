@@ -1,6 +1,8 @@
-// The cast — four agent "character cards", each with its brand colour as a
+// The cast — agent "character cards", each with its brand colour as a
 // left accent stripe + interior glow, role in serif italic, and the actual
-// theClub CLI invocation in a code block at the foot.
+// theClub CLI invocation in a code block at the foot. These four are
+// illustrative supported examples; the roster is open, so any configured
+// CLI or model can take a seat.
 
 type AgentCard = {
   key: "claude" | "gemini" | "codex" | "aider";
@@ -63,16 +65,14 @@ export default function Cast() {
           The Cast · Dramatis Personae
         </p>
         <h2 className="section-title mt-3 max-w-3xl">
-          The agents you own.{" "}
+          A few of the usual suspects.{" "}
           <span className="serif-italic text-saffron">Each plays to type.</span>
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
-          These are the CLIs you already pay for, driven on your own
-          machine &mdash; locked to none of them. Each keeps its character;
-          theClub plays each to its strength. Prefer to skip the vendors
-          entirely? A native direct-API adapter drives any
-          OpenAI-compatible, Anthropic, or Ollama model the same way &mdash;
-          a fully local Qwen-Coder included.
+          theClub doesn&apos;t average its agents into a single mediocre
+          voice. Each one keeps its character &mdash; the orchestrator plays
+          each to its strength. The four below are popular examples; the
+          roster is yours to set.
         </p>
       </header>
 

@@ -7,7 +7,7 @@ const PREREQS: ReadonlyArray<string> = [
   "Rust toolchain (rustup)",
   "Node.js 20 or newer",
   "Tauri v2 system deps: libsoup-3.0-dev, libwebkit2gtk-4.1-dev, libjavascriptcoregtk-4.1-dev",
-  "Any combination of: claude, gemini, codex, aider CLIs — the more authenticated, the more agents engage",
+  "At least one agent: a CLI you already pay for (Claude Code, Codex, Gemini CLI…), a local Ollama model, or any OpenAI-compatible / Anthropic endpoint — add as many as you like",
 ];
 
 const KEYS: ReadonlyArray<{ path: string; what: string }> = [
@@ -98,9 +98,12 @@ npm run tauri dev`}
             ))}
           </ul>
           <p className="mt-2 text-xs leading-relaxed text-faint">
-            theClub never touches your keys &mdash; each CLI talks to its
-            provider directly. Worktree-jail hooks scope each worker so it
-            can only write inside its assigned branch directory.
+            These four are example configs &mdash; point an agent at any
+            OpenAI-compatible or Anthropic endpoint, or a local Ollama
+            model, the same way. theClub never touches your keys; each agent
+            talks to its provider directly. Worktree-jail hooks scope each
+            worker so it can only write inside its assigned branch
+            directory.
           </p>
         </article>
       </div>

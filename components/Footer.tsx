@@ -29,9 +29,9 @@ export default function Footer() {
                 Misc42 Labs
               </Link>{" "}
               workshop instrument. Source under AGPL-3.0. Set in IBM Plex
-              Sans &amp; Mono, Instrument Serif, and Tiro Devanagari Hindi.
-              The newsprint texture overlay is the same one the rest of the
-              studio uses &mdash; same paper, same press.
+              Sans &amp; Mono and Instrument Serif. The newsprint texture
+              overlay is the same one the rest of the studio uses &mdash;
+              same paper, same press.
             </p>
             <p className="mt-4 font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
               Provider-neutral &middot; local-first &middot; no analytics &middot; no telemetry
@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-wrap items-baseline justify-between gap-3 border-t border-rule pt-4 font-mono text-[0.66rem] uppercase tracking-[0.22em] text-faint">
           <span>&copy; 2026 &middot; Tanay Misra &middot; Bharat</span>
-          <span className="text-saffron">एक कोडबेस, चार दिमाग</span>
+          <span className="text-saffron">one codebase, many minds</span>
         </div>
       </div>
     </footer>

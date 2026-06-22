@@ -41,24 +41,24 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://misc42.github.io/theclub-landing"),
   title: {
-    default: "theClub — the Switzerland of coding agents",
+    default: "theClub — one codebase, many minds",
     template: "%s — theClub",
   },
   description:
-    "The neutral, local layer that drives every provider's coding agent on your machine — your claude / gemini / codex subscriptions, a fully local model, or any mix. Code and keys never leave your machine. Provider-neutral, locked to none. Open source.",
+    "A local desktop orchestrator for the coding CLIs you already pay for — Claude Code, Codex, Gemini CLI, local models, or any mix. N agents on your repo, on your machine, through an autonomous 8-phase plan → review → merge pipeline with a live flow-graph. No cloud sandbox, no forced PR. Open source.",
   openGraph: {
-    title: "theClub — the Switzerland of coding agents",
+    title: "theClub — one codebase, many minds",
     description:
-      "Neutral, local-first. Drive any coding agent — the subscriptions you already pay for, or a fully local model — on your own machine. Provider-neutral, locked to none. Tauri + Rust. Linux v1. Open source.",
+      "Not just a worktree runner — an autonomous pipeline. Open-roster, any-model, BYO-CLI orchestrator with an 8-phase plan → review → merge loop and a live flow-graph. Local. Open source.",
     siteName: "theClub",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "theClub — the Switzerland of coding agents",
+    title: "theClub — one codebase, many minds",
     description:
-      "The neutral, local layer that drives any coding agent — your subscriptions, or a fully local model — on your own machine.",
+      "Open-roster coding orchestrator. Bring your own CLIs or local models; an autonomous 8-phase pipeline runs N agents on your repo, your machine — no cloud sandbox, no forced PR.",
   },
   icons: {
     icon: "/favicon.svg",
