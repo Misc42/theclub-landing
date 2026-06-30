@@ -3,6 +3,10 @@
 
 const COUNTERS: ReadonlyArray<{ k: string; v: string }> = [
   {
+    k: "Plans the waves, gates the merge, grades the run",
+    v: "A brain decomposes your goal into a dependency-ordered wave plan, runs each wave, then gates every change through an independent review and a merge-worthiness check before it lands — and scores the whole run at the end. You set the goal; it plans, gates, and grades. No swarm to babysit.",
+  },
+  {
     k: "Direct stream-json transport",
     v: "Each CLI is spawned non-interactively with NDJSON output. No pty, no TUI, no banner that can jam the pipeline.",
   },
