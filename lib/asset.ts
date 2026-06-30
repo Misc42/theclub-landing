@@ -8,8 +8,8 @@
  * (local dev, custom-domain deploy).
  *
  * Always pass a leading `/`-prefixed public-folder path:
- *   asset("/screenshots/hero.png") => "/tvashtra-landing/screenshots/hero.png"
- *   asset("/og.png")                => "/tvashtra-landing/og.png"
+ *   asset("/screenshots/hero.png") => "/theclub-landing/screenshots/hero.png"
+ *   asset("/og.png")                => "/theclub-landing/og.png"
  */
 export function asset(path: string): string {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";

@@ -1,8 +1,12 @@
-// Photographic plate gallery — three screenshots of the actual desktop app,
+// Photographic plate gallery — six screenshots of the actual desktop app,
 // framed as editorial dispatches. Each plate gets a serif title + a single
 // line of dry mono caption so the image is the headline, not the prose.
+// Every image is a real capture of theClub driving a live four-worker run.
 
 import Image from "next/image";
+import { asset } from "@/lib/asset";
+
+type Tone = "saffron" | "claude" | "gemini" | "green" | "codex" | "aider";
 
 type Plate = {
   src: string;
@@ -10,49 +14,80 @@ type Plate = {
   title: string;
   body: string;
   caption: string;
-  // tone tells the figure border which agent-coloured rail to wear.
-  tone: "saffron" | "claude" | "gemini";
+  // tone tells the figure's left rail which agent-coloured stripe to wear.
+  tone: Tone;
 };
-
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const PLATES: ReadonlyArray<Plate> = [
   {
-    src: `${BASE}/screenshots/agents-running.png`,
+    src: asset("/screenshots/agents-running.png"),
     alt:
-      "theClub's stage layout — Claude in the lead pane on the left, Gemini, Codex and Aider stacked on the right, all four agents idle and ready.",
-    title: "Stage layout",
+      "theClub's stage during a live run — Claude in the lead pane orchestrating, with four local qwen-coder workers stacked below, each assigned its own file and streaming logs while the wave runs.",
+    title: "One brain, four local hands",
     body:
-      "One lead pane on the left, three workers stacked on the right. Each card carries its agent's identity colour and a per-CLI start button — no chrome you don't read.",
-    caption: "Plate 01 · home screen · idle",
-    tone: "saffron",
-  },
-  {
-    src: `${BASE}/screenshots/blackboard.png`,
-    alt:
-      "The Blackboard modal — a centralised status board listing all four agents with their current task, elapsed time, context usage, token spend, and manual-override state.",
-    title: "The Blackboard",
-    body:
-      "Ctrl+B opens the conductor's score: every agent, every task, elapsed time, context burn, token spend. Glance once, know exactly where the pipeline is.",
-    caption: "Plate 02 · ctrl+b · pipeline status",
+      "Claude plans the work and hands it out; four local qwen-coder workers take a file each and run at once. Every card wears its agent's colour, its live log, and the model behind it — here all four are ollama, all four keyless.",
+    caption: "Plate 01 · stage · wave 1 of 1",
     tone: "claude",
   },
   {
-    src: `${BASE}/screenshots/settings-drawer.png`,
+    src: asset("/screenshots/blackboard.png"),
     alt:
-      "The per-agent settings drawer slides in from the right. Each agent gets its own section with status, tokens used, context window, score, a context-window bar, low/medium/high reasoning effort toggle, and a manual-override switch.",
-    title: "Per-agent drawer",
+      "The Blackboard modal — a single status board listing all five agents (Claude plus four Qwen workers) with task, elapsed time, context usage and token spend.",
+    title: "The Blackboard",
     body:
-      "Click any agent's header to scope the drawer to it. Status, tokens, context-window usage, score — plus reasoning effort and a manual-override toggle that tells the orchestrator to skip this worker on dispatch.",
-    caption: "Plate 03 · per-agent · live numbers",
+      "One keystroke pulls up the conductor's score: every agent on a single board — its task, elapsed time, context burn and token spend. Here they're standing by; mid-run the same board is your one source of truth.",
+    caption: "Plate 02 · ctrl+b · the board",
     tone: "gemini",
+  },
+  {
+    src: asset("/screenshots/settings-drawer.png"),
+    alt:
+      "The per-agent settings drawer scoped to the Qwen workers — each showing status, tokens used, context window, a rolling quality/speed/trust score, and a manual-override toggle.",
+    title: "Every worker, tuned",
+    body:
+      "Open any worker for its real numbers — tokens, context window, a rolling quality / speed / trust score — and flip the manual override that tells the orchestrator to skip it on the next dispatch. This one's a local qwen-coder over ollama's direct-api.",
+    caption: "Plate 03 · per-agent · live dials",
+    tone: "green",
+  },
+  {
+    src: asset("/screenshots/soulmandala.png"),
+    alt:
+      "The SoulMandala view — the orchestrator drawn as a central deity in a mandorla, the four workers as a retinue on a single orbit ring, the prompt set as an italic caption at the heart of the folio.",
+    title: "A god's-eye folio",
+    body:
+      "The same run, drawn as an illuminated manuscript: the brain a central deity, the workers a retinue on the orbit ring, the prompt set at the heart. It holds still until something moves — a token burst pulses, a stall fades, a finished worker shines.",
+    caption: "Plate 04 · mandala · the retinue",
+    tone: "saffron",
+  },
+  {
+    src: asset("/screenshots/swimlane.png"),
+    alt:
+      "The flow-graph view — a goal node on the left fanning out to four parallel editor tasks (capitalize, range, unique, groupBy), each dispatched to its own worker, then converging into a single result hexagon on the right.",
+    title: "Concurrency, made legible",
+    body:
+      "The goal fans into four independent tasks, each handed to its own worker, then converges back to one deliverable. You read the parallelism straight off the page — which is the whole point, and the thing a waterfall can't show.",
+    caption: "Plate 05 · flow-graph · the wave",
+    tone: "codex",
+  },
+  {
+    src: asset("/screenshots/roster-studio.png"),
+    alt:
+      "Roster Studio — a two-pane editor with the lineup on the left and an inspector on the right, choosing a slot's role, colour, and harness: an agentic CLI or a direct-api model endpoint.",
+    title: "Roster Studio",
+    body:
+      "Cast the lineup yourself. Any model, any role — an agentic CLI like Claude or Codex, or a direct-api slot pointed at a local, keyless ollama model. Sixteen slots, parallel or serial, saved to one TOML.",
+    caption: "Plate 06 · roster · bring your own",
+    tone: "aider",
   },
 ];
 
-const RAIL: Record<Plate["tone"], string> = {
+const RAIL: Record<Tone, string> = {
   saffron: "var(--accent-warm)",
   claude: "var(--agent-claude)",
   gemini: "var(--agent-gemini)",
+  green: "var(--accent)",
+  codex: "var(--agent-codex)",
+  aider: "var(--agent-aider)",
 };
 
 export default function Interface() {
@@ -61,73 +96,87 @@ export default function Interface() {
       <header className="rule-double pb-4">
         <p className="dispatch-mark">
           <span className="dot" aria-hidden />
-          The Interface · 3 plates
+          The Interface · six plates
         </p>
         <h2 className="section-title mt-3 max-w-3xl">
           The instruments, photographed{" "}
-          <span className="serif-italic text-saffron">in repose.</span>
+          <span className="serif-italic text-saffron">mid-wave.</span>
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
-          theClub is a desktop app, not a hosted dashboard. The three plates
-          below are real screenshots of the running app on Linux &mdash; no
-          mockups, no faked numbers, no &ldquo;coming soon&rdquo; sticker.
+          theClub is a desktop app, not a hosted dashboard. Every plate below is
+          a real screenshot of the running app on Linux &mdash; three caught
+          mid-wave, three of the controls behind them. No mockups, no faked
+          numbers, no &ldquo;coming soon&rdquo; sticker.
         </p>
       </header>
 
-      <ol className="mt-12 flex flex-col gap-16 md:gap-20">
-        {PLATES.map((p, i) => (
-          <li key={p.src} className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-end">
-            <figure
-              className="relative overflow-hidden rounded-sm border border-rule"
-              // @ts-expect-error CSS var for the left rail colour
-              style={{ "--plate-rail": RAIL[p.tone] }}
+      <ol className="mt-12 flex flex-col gap-16 md:gap-24">
+        {PLATES.map((p, i) => {
+          // Alternate the caption side for an editorial, broadsheet rhythm.
+          const flip = i % 2 === 1;
+          return (
+            <li
+              key={p.src}
+              className={`grid gap-6 lg:items-end ${
+                flip
+                  ? "lg:grid-cols-[18rem_minmax(0,1fr)]"
+                  : "lg:grid-cols-[minmax(0,1fr)_18rem]"
+              }`}
             >
-              {/* Left rail in the agent / saffron tone — anchors the plate
-                  visually to its caption. Same trick the Pipeline rail uses. */}
-              <span
-                aria-hidden
-                className="absolute left-0 top-0 bottom-0 w-[3px]"
-                style={{
-                  background: RAIL[p.tone],
-                  boxShadow: `0 0 28px color-mix(in srgb, ${RAIL[p.tone]} 45%, transparent)`,
-                }}
-              />
-              <Image
-                src={p.src}
-                alt={p.alt}
-                width={1900}
-                height={1000}
-                priority={i === 0}
-                className="block h-auto w-full"
-                sizes="(min-width: 1024px) 64rem, 100vw"
-              />
-              {/* A faint inner border for the "press-printed" feel. */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-sm"
-                style={{
-                  boxShadow:
-                    "inset 0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent)",
-                }}
-              />
-            </figure>
-
-            <figcaption className="lg:pl-2">
-              <p
-                className="font-mono text-[0.66rem] uppercase tracking-[0.22em]"
-                style={{ color: RAIL[p.tone] }}
+              <figure
+                className={`relative overflow-hidden rounded-sm border border-rule ${
+                  flip ? "lg:order-2" : ""
+                }`}
               >
-                {p.caption}
-              </p>
-              <h3 className="serif-italic mt-3 text-[clamp(1.4rem,2.2vw,1.75rem)] leading-tight text-ink">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-[0.96rem] leading-relaxed text-muted">
-                {p.body}
-              </p>
-            </figcaption>
-          </li>
-        ))}
+                {/* Left rail in the plate's agent tone — anchors the image to
+                    its caption. Same trick the Pipeline rail uses. */}
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-0 bottom-0 z-10 w-[3px]"
+                  style={{
+                    background: RAIL[p.tone],
+                    boxShadow: `0 0 28px color-mix(in srgb, ${RAIL[p.tone]} 45%, transparent)`,
+                  }}
+                />
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  width={1400}
+                  height={900}
+                  priority={i === 0}
+                  className="block h-auto w-full"
+                  sizes="(min-width: 1024px) 60rem, 100vw"
+                />
+                {/* A faint inner border for the "press-printed" feel. */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-sm"
+                  style={{
+                    boxShadow:
+                      "inset 0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent)",
+                  }}
+                />
+              </figure>
+
+              <figcaption
+                className={`lg:pb-1 ${flip ? "lg:order-1 lg:text-right" : "lg:pl-2"}`}
+              >
+                <p
+                  className="font-mono text-[0.66rem] uppercase tracking-[0.22em]"
+                  style={{ color: RAIL[p.tone] }}
+                >
+                  {p.caption}
+                </p>
+                <h3 className="serif-italic mt-3 text-[clamp(1.4rem,2.2vw,1.75rem)] leading-tight text-ink">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-[0.96rem] leading-relaxed text-muted">
+                  {p.body}
+                </p>
+              </figcaption>
+            </li>
+          );
+        })}
       </ol>
     </section>
   );
