@@ -32,11 +32,11 @@ const PLATES: ReadonlyArray<Plate> = [
   {
     src: asset("/screenshots/blackboard.png"),
     alt:
-      "The Blackboard modal — a single status board listing all five agents (Claude plus four Qwen workers) with task, elapsed time, context usage and token spend.",
+      "The Blackboard modal caught mid-run — a single status board listing all four agents (Claude plus three local Qwen workers), each with its task and live token count; the three workers read COMPLETE while the reviewer is still reading the diffs.",
     title: "The Blackboard",
     body:
-      "One keystroke pulls up the conductor's score: every agent on a single board — its task, elapsed time, context burn and token spend. Here they're standing by; mid-run the same board is your one source of truth.",
-    caption: "Plate 02 · ctrl+b · the board",
+      "One keystroke pulls up the conductor's score: every agent on a single board — its task, elapsed time, context burn and real token spend. Here it's caught mid-run — the three local workers have each finished their file, the reviewer is reading the diffs. One glance and you know exactly where the pipeline stands.",
+    caption: "Plate 02 · ctrl+b · mid-run",
     tone: "gemini",
   },
   {
@@ -62,11 +62,11 @@ const PLATES: ReadonlyArray<Plate> = [
   {
     src: asset("/screenshots/swimlane.png"),
     alt:
-      "The flow-graph view — a goal node on the left fanning out to four parallel editor tasks (capitalize, range, unique, groupBy), each dispatched to its own worker, then converging into a single result hexagon on the right.",
+      "The Swimlane view — one lane per roster slot on a shared time axis: the brain's planner lane on top, three local Qwen workers below, each with its task bar (titlecase, clampInt, meanOf) sitting side by side in wave 0, all three running at once.",
     title: "Concurrency, made legible",
     body:
-      "The goal fans into four independent tasks, each handed to its own worker, then converges back to one deliverable. You read the parallelism straight off the page — which is the whole point, and the thing a waterfall can't show.",
-    caption: "Plate 05 · flow-graph · the wave",
+      "One lane per agent, a shared left-to-right time axis, a bar per task. Three workers' bars sit side by side in the same wave — you read the parallelism straight off the page, which is exactly what a tree or a waterfall view structurally cannot show.",
+    caption: "Plate 05 · swimlane · wave 0",
     tone: "codex",
   },
   {
