@@ -36,7 +36,7 @@ export default function Hero() {
       <p className="mt-3.5 text-[13px] text-faint">
         Linux · Tauri + Rust · your keys, zero telemetry
       </p>
-      <div className="mx-auto mt-14 max-w-[1020px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+      <div className="mx-auto mt-14 max-w-[1020px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.3)]">
         <Image
           src={asset("/screenshots/agents-running.png")}
           alt="theClub mid-run — four agents in parallel"

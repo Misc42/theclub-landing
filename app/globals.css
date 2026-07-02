@@ -6,11 +6,20 @@
   --color-faint: var(--faint);
   --color-bg: var(--bg);
   --color-bg-alt: var(--bg-alt);
-  --color-bg-code: var(--bg-code);
   --color-border: var(--border);
   --color-border-2: var(--border-2);
   --color-accent: var(--accent);
   --color-success: var(--success);
+
+  /* The install terminal stays a dark island on the light page — its own
+     fixed-dark tokens, independent of --ink/--bg above. */
+  --color-term-bg: var(--term-bg);
+  --color-term-border: var(--term-border);
+  --color-term-border-2: var(--term-border-2);
+  --color-term-ink: var(--term-ink);
+  --color-term-muted: var(--term-muted);
+  --color-term-faint: var(--term-faint);
+  --color-term-accent: var(--term-accent);
 
   --font-sans: var(--font-schibsted-grotesk), system-ui, -apple-system, sans-serif;
   --font-deva: var(--font-anek-devanagari), system-ui, sans-serif;
@@ -18,17 +27,28 @@
 }
 
 :root {
-  --bg: #0E0E10;
-  --bg-alt: #121214;
-  --bg-code: #0A0A0C;
-  --ink: #EDEDEF;
-  --muted: #A1A1AA;
-  --faint: #6B6B74;
-  --border: #232326;
-  --border-2: #2E2E33;
-  --accent: #A78BFA;
-  --success: #34D399;
+  /* Light theme — owner override of the handoff's dark spec. Same tokens
+     as the hub/Sanketra/Mukut light palette, plus theClub's own violet. */
+  --bg: #FAFAF7;
+  --bg-alt: #FFFFFF;
+  --ink: #131315;
+  --muted: #5F5F66;
+  --faint: #8A8A92;
+  --border: #E8E7E1;
+  --border-2: #D9D8D0;
+  --accent: #7C3AED;
+  --success: #15803D;
   --pad: clamp(20px, 5vw, 40px);
+
+  /* Fixed-dark tokens for the install terminal card only — a terminal
+     reads dark regardless of the page theme around it. */
+  --term-bg: #0A0A0C;
+  --term-border: #232326;
+  --term-border-2: #2E2E33;
+  --term-ink: #EDEDEF;
+  --term-muted: #A1A1AA;
+  --term-faint: #6B6B74;
+  --term-accent: #A78BFA;
 }
 
 *,
@@ -57,7 +77,7 @@ body {
 }
 
 ::selection {
-  background: rgba(167, 139, 250, 0.25);
+  background: rgba(124, 58, 237, 0.25);
 }
 
 a {
@@ -87,8 +107,8 @@ footer {
   font-family: var(--font-deva);
 }
 
-/* Primary CTA — solid white-on-ink. theClub's violet is reserved for labels
-   and links; buttons stay white per the brand accent rule. */
+/* Primary CTA — solid ink-on-paper. theClub's violet is reserved for labels
+   and links; buttons stay ink per the brand accent rule. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -102,7 +122,7 @@ footer {
   transition: background 0.15s;
 }
 .btn-primary:hover {
-  background: #C9C9CE;
+  background: #2A2A2E;
 }
 
 .btn-secondary {

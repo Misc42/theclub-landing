@@ -38,7 +38,7 @@ export default function Nav() {
           href="https://github.com/Misc42/theClub"
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-lg bg-ink px-[18px] py-[9px] text-[13.5px] font-semibold text-bg transition-colors hover:bg-[#C9C9CE] md:inline-flex"
+          className="hidden rounded-lg bg-ink px-[18px] py-[9px] text-[13.5px] font-semibold text-bg transition-colors hover:bg-[#2A2A2E] md:inline-flex"
         >
           Star on GitHub
         </Link>

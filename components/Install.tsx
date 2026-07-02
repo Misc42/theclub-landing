@@ -33,27 +33,27 @@ export default function Install() {
             macOS &amp; Windows once Linux v1 hardens.
           </p>
         </div>
-        <div className="overflow-hidden rounded-[14px] border border-border bg-bg-code">
-          <div className="flex items-center justify-between border-b border-border px-[18px] py-3">
-            <span className="font-mono text-xs text-faint">terminal</span>
+        <div className="overflow-hidden rounded-[14px] border border-term-border bg-term-bg">
+          <div className="flex items-center justify-between border-b border-term-border px-[18px] py-3">
+            <span className="font-mono text-xs text-term-faint">terminal</span>
             <button
               type="button"
               onClick={handleCopy}
-              className="rounded-md border border-border-2 px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent hover:text-accent"
+              className="rounded-md border border-term-border-2 px-3 py-1.5 font-mono text-xs text-term-muted transition-colors hover:border-term-accent hover:text-term-accent"
             >
               {copied ? "Copied" : "Copy"}
             </button>
           </div>
-          <pre className="overflow-x-auto px-[18px] py-[22px] font-mono text-[13.5px] leading-[1.8] text-ink">
+          <pre className="overflow-x-auto px-[18px] py-[22px] font-mono text-[13.5px] leading-[1.8] text-term-ink">
             <code className="grid">
               {LINES.map((line) => (
                 <span key={line}>
-                  <span className="text-faint">$</span> {line}
+                  <span className="text-term-faint">$</span> {line}
                 </span>
               ))}
             </code>
           </pre>
-          <div className="border-t border-border px-[18px] py-3 font-mono text-[11.5px] text-faint">
+          <div className="border-t border-term-border px-[18px] py-3 font-mono text-[11.5px] text-term-faint">
             Rust + Node 20 + Tauri v2 deps · no telemetry leaves the machine
           </div>
         </div>
