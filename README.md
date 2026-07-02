@@ -1,20 +1,21 @@
 # theclub-landing
 
+**Live · https://misc42.github.io/theclub-landing/**
+
 Public landing page for [theClub](https://github.com/Misc42/theClub) — a
 local desktop orchestrator for the coding CLIs you already pay for (Claude
-Code, Codex, Gemini CLI), local models, or any mix. An open roster of N
-agents on your repo, on your machine, driven by an autonomous 8-phase
-plan → review → merge pipeline with a live flow-graph — no cloud sandbox,
-no forced PR.
+Code, Codex, Gemini CLI), local models, or any mix. Run them in parallel on
+one repo — planned, reviewed, and merged autonomously, on your machine. No
+cloud sandbox, no forced PR.
 
 One codebase, many minds.
 
-Shares its visual hand with the rest of the
+Shares its design system with the rest of the
 [Misc42 Labs](https://misc42.github.io/misc42labs/) portfolio
 ([Sanketra](https://github.com/Misc42/sanketra),
 [Mukut](https://github.com/Misc42/mukut),
-[Tvashtra](https://github.com/Misc42/tvashtra-landing)) — same
-paper-black, same type stack, same restraint.
+[Tvashtra](https://github.com/Misc42/tvashtra-landing)) — same type stack,
+dark theme with a violet accent like Tvashtra.
 
 ## Stack
 
@@ -23,7 +24,7 @@ paper-black, same type stack, same restraint.
 - Tailwind 4 (CSS-first config in `app/globals.css`)
 - TypeScript 5
 - pnpm 10
-- Fonts via `next/font`: IBM Plex Sans, IBM Plex Mono, Instrument Serif
+- Fonts via `next/font`: Schibsted Grotesk, Anek Devanagari, Geist Mono
 
 No runtime backend. No forms. Read-only marketing site that links out to
 the GitHub repo for installation.
@@ -63,13 +64,12 @@ The site lands at `https://misc42.github.io/theclub-landing/`.
 ```
 app/
   layout.tsx          font loading + html shell
-  page.tsx            single-page landing — Hero, Problem, How, Install, FAQ
-  globals.css         palette tokens + noise overlay + utilities
+  page.tsx            single-page landing — Hero, HowItWorks, Screenshots, Install
+  globals.css         dark palette tokens + utilities
 
 components/
-  Hero.tsx, Problem.tsx, HowItWorks.tsx,
-  Install.tsx, Faq.tsx,
-  Nav.tsx, Footer.tsx
+  Hero.tsx, HowItWorks.tsx, Screenshots.tsx,
+  Install.tsx, Nav.tsx, Footer.tsx
 
 public/
   favicon.svg
@@ -79,4 +79,4 @@ public/
 
 AGPL-3.0-or-later, matching the application.
 
-Issues + DMs to [@tanaymisra97](https://x.com/tanaymisra97).
+Issues + DMs to [Misc42 Labs](https://x.com/misc42).
