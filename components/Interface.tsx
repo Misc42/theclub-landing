@@ -1,7 +1,7 @@
-// Photographic plate gallery — six screenshots of the actual desktop app,
+// Photographic plate gallery — five screenshots of the actual desktop app,
 // framed as editorial dispatches. Each plate gets a serif title + a single
 // line of dry mono caption so the image is the headline, not the prose.
-// Every image is a real capture of theClub driving a live four-worker run.
+// Every image is a real capture of theClub driving a live three-worker run.
 
 import Image from "next/image";
 import { asset } from "@/lib/asset";
@@ -14,70 +14,64 @@ type Plate = {
   title: string;
   body: string;
   caption: string;
+  // Native pixel size of the capture — the figure renders at its own aspect,
+  // so nothing is cropped or stretched.
+  w: number;
+  h: number;
   // tone tells the figure's left rail which agent-coloured stripe to wear.
   tone: Tone;
 };
 
 const PLATES: ReadonlyArray<Plate> = [
   {
-    src: asset("/screenshots/agents-running.png"),
-    alt:
-      "theClub's stage during a live run — Claude in the lead pane orchestrating, with four local qwen-coder workers stacked below, each assigned its own file and streaming logs while the wave runs.",
-    title: "One brain, four local hands",
-    body:
-      "Claude plans the work and hands it out; four local qwen-coder workers take a file each and run at once. Every card wears its agent's colour, its live log, and the model behind it — here all four are ollama, all four keyless.",
-    caption: "Plate 01 · stage · wave 1 of 1",
+    src: asset("/screenshots/runsheet-complete.png"),
+    alt: "theClub's run sheet after a finished run — the phase spine down the left, 01 PLAN with six tasks across three waves, 02 EXECUTE, 03 REVIEW & MERGE with a score and merge tier per task, and a PARTIAL — 1 PRESERVED verdict.",
+    title: "The whole run, one document",
+    body: "No dashboard to reassemble in your head. The phases run down the left — Clarify, Analyze, Plan, Dispatch, Execute, Review, Merge, Verify, Score — and the run itself reads top to bottom: the plan it wrote, the waves it ran, the diffs it merged, the verdict it will not soften.",
+    caption: "Plate 01 · run sheet · top to bottom",
+    w: 2800,
+    h: 2768,
     tone: "claude",
   },
   {
-    src: asset("/screenshots/blackboard.png"),
-    alt:
-      "The Blackboard modal caught mid-run — a single status board listing all four agents (Claude plus three local Qwen workers), each with its task and live token count; the three workers read COMPLETE while the reviewer is still reading the diffs.",
-    title: "The Blackboard",
-    body:
-      "One keystroke pulls up the conductor's score: every agent on a single board — its task, elapsed time, context burn and real token spend. Here it's caught mid-run — the three local workers have each finished their file, the reviewer is reading the diffs. One glance and you know exactly where the pipeline stands.",
-    caption: "Plate 02 · ctrl+b · mid-run",
-    tone: "gemini",
-  },
-  {
-    src: asset("/screenshots/settings-drawer.png"),
-    alt:
-      "The per-agent settings drawer scoped to the Qwen workers — each showing status, tokens used, context window, a rolling quality/speed/trust score, and a manual-override toggle.",
-    title: "Every worker, tuned",
-    body:
-      "Open any worker for its real numbers — tokens, context window, a rolling quality / speed / trust score — and flip the manual override that tells the orchestrator to skip it on the next dispatch. This one's a local qwen-coder over ollama's direct-api.",
-    caption: "Plate 03 · per-agent · live dials",
-    tone: "green",
-  },
-  {
-    src: asset("/screenshots/soulmandala.png"),
-    alt:
-      "The SoulMandala view — the orchestrator drawn as a central deity in a mandorla, the four workers as a retinue on a single orbit ring, the prompt set as an italic caption at the heart of the folio.",
-    title: "A god's-eye folio",
-    body:
-      "The same run, drawn as an illuminated manuscript: the brain a central deity, the workers a retinue on the orbit ring, the prompt set at the heart. It holds still until something moves — a token burst pulses, a stall fades, a finished worker shines.",
-    caption: "Plate 04 · mandala · the retinue",
-    tone: "saffron",
-  },
-  {
-    src: asset("/screenshots/swimlane.png"),
-    alt:
-      "The Swimlane view — one lane per roster slot on a shared time axis: the brain's planner lane on top, three local Qwen workers below, each with its task bar (titlecase, clampInt, meanOf) sitting side by side in wave 0, all three running at once.",
-    title: "Concurrency, made legible",
-    body:
-      "One lane per agent, a shared left-to-right time axis, a bar per task. Three workers' bars sit side by side in the same wave — you read the parallelism straight off the page, which is exactly what a tree or a waterfall view structurally cannot show.",
-    caption: "Plate 05 · swimlane · wave 0",
+    src: asset("/screenshots/runsheet-merge.png"),
+    alt: "The REVIEW & MERGE band — six tasks, each with a reviewer score and the merge tier that landed it (clean, union, ai-semantic), one task held at GATE UNPROVEN with a Merge anyway button, one rejected and re-dispatched.",
+    title: "Which tier landed it",
+    body: "Every task shows the score the reviewer gave it and the tier that actually landed the diff — clean, union, ai-semantic. T3 could not prove its gate, so it sits at GATE UNPROVEN with a Merge anyway button and nothing merged behind your back. The run closes PARTIAL — 1 PRESERVED.",
+    caption: "Plate 02 · merge · the tier ladder",
+    w: 1960,
+    h: 1045,
     tone: "codex",
   },
   {
+    src: asset("/screenshots/runsheet-clarify.png"),
+    alt: "A run paused at the Clarify phase — a panel titled THE BRAIN ASKS with the question 'Should the refresh token rotate on every use, or only on a detected reuse (RTR)?' and an answer box.",
+    title: "It asks before it plans",
+    body: "An ambiguous goal stops the run at Clarify instead of quietly guessing. Here the brain wants to know whether the refresh token rotates on every use or only on a detected reuse — and the plan waits on your answer.",
+    caption: "Plate 03 · clarify · the brain asks",
+    w: 2800,
+    h: 864,
+    tone: "saffron",
+  },
+  {
     src: asset("/screenshots/roster-studio.png"),
-    alt:
-      "Roster Studio — a two-pane editor with the lineup on the left and an inspector on the right, choosing a slot's role, colour, and harness: an agentic CLI or a direct-api model endpoint.",
+    alt: "Roster Studio — four drag-ordered slots on the left, an inspector on the right for name, role, colour, tuning, harness, backend and model, and a roster valid state at the foot.",
     title: "Roster Studio",
-    body:
-      "Cast the lineup yourself. Any model, any role — an agentic CLI like Claude or Codex, or a direct-api slot pointed at a local, keyless ollama model. Sixteen slots, parallel or serial, saved to one TOML.",
-    caption: "Plate 06 · roster · bring your own",
+    body: "Cast the lineup yourself. Drag the slots into order, open one, and set its role, colour, tuning, harness and model — an agentic CLI, or a direct-api slot pointed at a keyless local model. Sixteen slots, parallel or serial, saved to one TOML.",
+    caption: "Plate 04 · roster · bring your own",
+    w: 2800,
+    h: 1800,
     tone: "aider",
+  },
+  {
+    src: asset("/screenshots/settings-drawer.png"),
+    alt: "The settings drawer — one card per agent showing status, tokens used, context window, a rolling quality/speed/trust score, and a manual-override toggle.",
+    title: "Every agent, tuned",
+    body: "Open any slot for its real numbers — status, tokens burnt, context window, a rolling quality / speed / trust score — and flip the manual override that tells the orchestrator to skip it on the next dispatch.",
+    caption: "Plate 05 · per-agent · live dials",
+    w: 2800,
+    h: 1800,
+    tone: "green",
   },
 ];
 
@@ -96,16 +90,16 @@ export default function Interface() {
       <header className="rule-double pb-4">
         <p className="dispatch-mark">
           <span className="dot" aria-hidden />
-          The Interface · six plates
+          The Interface · five plates
         </p>
         <h2 className="section-title mt-3 max-w-3xl">
-          The instruments, photographed{" "}
-          <span className="serif-italic text-saffron">mid-wave.</span>
+          The run sheet, photographed{" "}
+          <span className="serif-italic text-saffron">as it closed.</span>
         </h2>
         <p className="serif-italic mt-5 max-w-2xl text-[clamp(1.05rem,1.7vw,1.2rem)] leading-snug text-muted">
           theClub is a desktop app, not a hosted dashboard. Every plate below is
-          a real screenshot of the running app on Linux &mdash; three caught
-          mid-wave, three of the controls behind them. No mockups, no faked
+          a real screenshot of the running app on Linux &mdash; three of one run
+          read end to end, two of the controls behind it. No mockups, no faked
           numbers, no &ldquo;coming soon&rdquo; sticker.
         </p>
       </header>
@@ -141,8 +135,8 @@ export default function Interface() {
                 <Image
                   src={p.src}
                   alt={p.alt}
-                  width={1400}
-                  height={900}
+                  width={p.w}
+                  height={p.h}
                   priority={i === 0}
                   className="block h-auto w-full"
                   sizes="(min-width: 1024px) 60rem, 100vw"

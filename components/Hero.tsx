@@ -20,10 +20,10 @@ export default function Hero() {
         <br />
         <span className="text-faint">Many minds.</span>
       </h1>
-      <p className="mx-auto mt-[22px] max-w-[580px] text-lg leading-[1.55] text-muted">
-        Run the coding agents you already pay for — Claude Code, Codex,
-        Gemini CLI, local models — in parallel on one repo. Planned,
-        reviewed, and merged autonomously, on your machine.
+      <p className="mx-auto mt-[22px] max-w-[600px] text-lg leading-[1.55] text-muted">
+        Run the coding agents you already pay for — Claude Code, Codex, Gemini
+        CLI, local models — in parallel on one repo. The whole run reads as one
+        document: what was planned, what merged, and which tier landed it.
       </p>
       <div className="mt-[34px] flex justify-center gap-3">
         <Link href="#install" className="btn-primary">
@@ -36,14 +36,17 @@ export default function Hero() {
       <p className="mt-3.5 text-[13px] text-faint">
         Linux · Tauri + Rust · your keys, zero telemetry
       </p>
-      <div className="mx-auto mt-14 max-w-[1020px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.3)]">
+      {/* The run sheet is the product's default view, so the hero shows a whole
+          one uncropped — plan, waves, merge tiers, verdict, top to bottom. */}
+      <div className="mx-auto mt-14 max-w-[960px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.3)]">
         <Image
-          src={asset("/screenshots/agents-running.png")}
-          alt="theClub mid-run — four agents in parallel"
-          width={1600}
-          height={960}
+          src={asset("/screenshots/runsheet-complete.png")}
+          alt="theClub's run sheet after a finished run — a phase spine down the left, then 01 PLAN with six tasks across three waves, 02 EXECUTE, 03 REVIEW & MERGE with a score and merge tier per task, and a PARTIAL — 1 PRESERVED verdict."
+          width={2800}
+          height={2768}
           priority
-          className="block aspect-[16/9.6] w-full object-cover object-top"
+          className="block h-auto w-full"
+          sizes="(min-width: 1024px) 60rem, 100vw"
         />
       </div>
     </section>
