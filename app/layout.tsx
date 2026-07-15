@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { asset } from "@/lib/asset";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   subsets: ["latin", "latin-ext"],
@@ -52,7 +53,11 @@ export const metadata: Metadata = {
       "A goal in. A merged commit out. Run the coding agents you already pay for in parallel on one repo, on your machine.",
   },
   icons: {
-    icon: "/favicon.svg",
+    // Next applies basePath to its own chunks and to <Link>, but NOT to the icon
+    // href — it emits <link rel="icon" href="/favicon.svg">, which on Pages (served
+    // under /theclub-landing/) resolves to the domain root and 404s. Wrap it like
+    // every other public asset.
+    icon: asset("/favicon.svg"),
   },
 };
 
