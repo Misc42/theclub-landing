@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        <span>© 2026 Misc42 Labs · AGPL-3.0</span>
+        <span>© 2026 Misc42 Labs · early access</span>
       </div>
     </footer>
   );

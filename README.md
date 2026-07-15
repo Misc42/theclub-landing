@@ -77,6 +77,6 @@ public/
 
 ## Licence
 
-AGPL-3.0-or-later, matching the application.
+Proprietary — © 2026 Misc42 Labs, all rights reserved. theClub is a paid product in early access; this landing site is not open source.
 
 Issues + DMs to [Misc42 Labs](https://x.com/misc42).

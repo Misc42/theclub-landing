@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="wrap pt-[88px] text-center">
       <p className="text-[13.5px] font-semibold text-accent">
-        ◇ Open source · AGPL-3.0 · a{" "}
+        ◇ Early access · a{" "}
         <Link
           href="https://misc42.github.io/misc42labs/"
           className="underline underline-offset-[3px]"

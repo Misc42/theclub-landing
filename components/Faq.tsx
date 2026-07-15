@@ -28,11 +28,11 @@ const QA: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Is it free?",
-    a: "theClub is open source under AGPL-3.0. You pay for whatever models you point it at. There's no theClub subscription, no hosted tier, no Pro version.",
+    a: "theClub is a Misc42 Labs product, currently in early-access testing and paid at launch — pricing is announced then. It runs entirely on your machine, and you bring your own model access: the CLIs you already pay for, or a local Ollama model. Your keys never touch theClub; agents talk to their providers directly.",
   },
   {
     q: "Why is this a ‘Misc42 Labs developer tool’?",
-    a: "Misc42 Labs is the studio building consumer software for Indian users (Sanketra, Mukut, Tvashtra). theClub is the workshop instrument the studio uses to ship those products. We open-source it because if a workshop instrument is sharp enough to ship our own products, it's sharp enough to share.",
+    a: "Misc42 Labs is the studio building consumer software for Indian users (Sanketra, Mukut, Tvashtra). theClub is the workshop instrument the studio uses to ship those products — a tool sharp enough to build our own products, now offered as a product in its own right.",
   },
 ];
 
