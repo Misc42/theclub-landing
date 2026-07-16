@@ -38,7 +38,7 @@ const WORKER = [
   "var(--accent)", // qwen-a — emerald
   "var(--agent-codex)", // qwen-b — azure
   "var(--agent-aider)", // qwen-c — amber
-  "var(--agent-gemini)", // qwen-d — violet
+  "var(--agent-agy)", // qwen-d — violet
 ];
 
 export default function Moat() {

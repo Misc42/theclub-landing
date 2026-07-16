@@ -4,7 +4,7 @@
 // The four named agents are illustrative supported examples; the roster is
 // open, so a real run can assign phases to any configured agent.
 
-type AgentKey = "claude" | "gemini" | "codex" | "aider";
+type AgentKey = "claude" | "agy" | "codex" | "aider";
 
 type Phase = {
   n: string;
@@ -25,8 +25,8 @@ const PHASES: ReadonlyArray<Phase> = [
     n: "01",
     name: "Clarify · Analyse",
     body:
-      "claude asks one clarifying question if the goal is underspecified (5-minute timeout, skippable). gemini reads the repo in parallel and returns a structured analysis.",
-    agents: ["claude", "gemini"],
+      "claude asks one clarifying question if the goal is underspecified (5-minute timeout, skippable). agy reads the repo in parallel and returns a structured analysis.",
+    agents: ["claude", "agy"],
   },
   {
     n: "02",
@@ -40,7 +40,7 @@ const PHASES: ReadonlyArray<Phase> = [
     name: "Dispatch",
     body:
       "Each plan task spawns its assigned agent in its own git worktree. Per-agent stream-json adapters tee NDJSON events back to the orchestrator.",
-    agents: ["claude", "gemini", "codex", "aider"],
+    agents: ["claude", "agy", "codex", "aider"],
   },
   {
     n: "04",
@@ -74,7 +74,7 @@ const PHASES: ReadonlyArray<Phase> = [
 
 const AGENT_COLOR: Record<AgentKey, string> = {
   claude: "var(--agent-claude)",
-  gemini: "var(--agent-gemini)",
+  agy: "var(--agent-agy)",
   codex: "var(--agent-codex)",
   aider: "var(--agent-aider)",
 };

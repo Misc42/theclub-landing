@@ -5,7 +5,7 @@
 // CLI or model can take a seat.
 
 type AgentCard = {
-  key: "claude" | "gemini" | "codex" | "aider";
+  key: "claude" | "agy" | "codex" | "aider";
   name: string;
   role: string;
   what: string;
@@ -25,14 +25,14 @@ const CAST: ReadonlyArray<AgentCard> = [
     color: "var(--agent-claude)",
   },
   {
-    key: "gemini",
-    name: "gemini",
-    role: "The reader",
+    key: "agy",
+    name: "agy",
+    role: "The researcher",
     what:
-      "Big-context analysis. Sweeps the repo, returns structured maps. Env-scrubs GEMINI_API_KEY / GOOGLE_API_KEY so OAuth wins; a 200 ms spawn stagger dodges the refresh race.",
+      "Antigravity — one CLI over Gemini 3.1 Pro's huge context, Claude Sonnet/Opus 4.6, and GPT-OSS 120B. No stream-json out of it, so theClub drives it as a plain-text --print responder and parses the file: blocks it hands back; agy never touches the worktree itself. Authenticates on its own Antigravity account — keyless from theClub's side.",
     invocation:
-      "gemini -p \"<prompt>\" \\\n  --output-format stream-json \\\n  --yolo --skip-trust \\\n  --include-directories <wt> \\\n  --session-id <uuid>",
-    color: "var(--agent-gemini)",
+      "agy --print \"<prompt>\" \\\n  --model \"Gemini 3.1 Pro (High)\"",
+    color: "var(--agent-agy)",
   },
   {
     key: "codex",

@@ -4,7 +4,7 @@
 const QA: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: "Why many agents and not one big model?",
-    a: "Because different agents have different strengths, and you don't have to pick just one. Claude Code is sharpest on high-level architecture and review, Gemini absorbs huge contexts, Codex handles terminal and devops chores, a local model is free and private. theClub plays each to its strength inside one pipeline — analyse with one, plan with another, execute in parallel, review back with a strong reasoner. The roster is open: any OpenAI-compatible or Anthropic endpoint, a local Ollama model, or the CLIs you already pay for. When the goal is trivial the cheap-path classifier short-circuits all of that to a single agent.",
+    a: "Because different agents have different strengths, and you don't have to pick just one. Claude Code is sharpest on high-level architecture and review, Antigravity is one CLI that reaches Gemini's huge context plus Claude and GPT-OSS, Codex handles terminal and devops chores, a local model is free and private. theClub plays each to its strength inside one pipeline — analyse with one, plan with another, execute in parallel, review back with a strong reasoner. The roster is open: any OpenAI-compatible or Anthropic endpoint, a local Ollama model, or the CLIs you already pay for. When the goal is trivial the cheap-path classifier short-circuits all of that to a single agent.",
   },
   {
     q: "How is this different from a worktree runner?",
@@ -16,7 +16,7 @@ const QA: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "Does this send my code anywhere?",
-    a: "Only to the model providers you've authenticated. theClub itself is a local Tauri desktop app — no analytics, no telemetry, no cloud middleware, no cloud sandbox. Each agent talks to its own backend directly with your keys — Claude / Gemini / OpenAI / OpenRouter, any OpenAI-compatible or Anthropic endpoint, or a local model that never leaves the box. The orchestrator just shuffles inputs and outputs between worktrees on your machine.",
+    a: "Only to the model providers you've authenticated. theClub itself is a local Tauri desktop app — no analytics, no telemetry, no cloud middleware, no cloud sandbox. Each agent talks to its own backend directly with your keys — Claude / Antigravity / OpenAI / OpenRouter, any OpenAI-compatible or Anthropic endpoint, or a local model that never leaves the box. The orchestrator just shuffles inputs and outputs between worktrees on your machine.",
   },
   {
     q: "What happened to agentapi?",

@@ -6,7 +6,7 @@
 import Image from "next/image";
 import { asset } from "@/lib/asset";
 
-type Tone = "saffron" | "claude" | "gemini" | "green" | "codex" | "aider";
+type Tone = "saffron" | "claude" | "agy" | "green" | "codex" | "aider";
 
 type Plate = {
   src: string;
@@ -78,7 +78,7 @@ const PLATES: ReadonlyArray<Plate> = [
 const RAIL: Record<Tone, string> = {
   saffron: "var(--accent-warm)",
   claude: "var(--agent-claude)",
-  gemini: "var(--agent-gemini)",
+  agy: "var(--agent-agy)",
   green: "var(--accent)",
   codex: "var(--agent-codex)",
   aider: "var(--agent-aider)",

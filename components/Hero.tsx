@@ -21,9 +21,9 @@ export default function Hero() {
         <span className="text-faint">Many minds.</span>
       </h1>
       <p className="mx-auto mt-[22px] max-w-[600px] text-lg leading-[1.55] text-muted">
-        Run the coding agents you already pay for — Claude Code, Codex, Gemini
-        CLI, local models — in parallel on one repo. The whole run reads as one
-        document: what was planned, what merged, and which tier landed it.
+        Run the coding agents you already pay for — Claude Code, Codex,
+        Antigravity, local models — in parallel on one repo. The whole run reads
+        as one document: what was planned, what merged, and which tier landed it.
       </p>
       <div className="mt-[34px] flex justify-center gap-3">
         <Link href="#install" className="btn-primary">

@@ -4,7 +4,7 @@
 
 Public landing page for [theClub](https://github.com/Misc42/theClub) — a
 local desktop orchestrator for the coding CLIs you already pay for (Claude
-Code, Codex, Gemini CLI), local models, or any mix. Run them in parallel on
+Code, Codex, Antigravity), local models, or any mix. Run them in parallel on
 one repo — planned, reviewed, and merged autonomously, on your machine. No
 cloud sandbox, no forced PR.
 

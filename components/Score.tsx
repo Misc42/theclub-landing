@@ -6,7 +6,7 @@
 // All CSS / inline SVG — no JS state, no external deps.
 
 type Agent = {
-  key: "claude" | "gemini" | "codex" | "aider";
+  key: "claude" | "agy" | "codex" | "aider";
   name: string;
   role: string;
   color: string;
@@ -27,10 +27,10 @@ const AGENTS: ReadonlyArray<Agent> = [
     ],
   },
   {
-    key: "gemini",
-    name: "gemini",
+    key: "agy",
+    name: "agy",
     role: "Research · long context",
-    color: "var(--agent-gemini)",
+    color: "var(--agent-agy)",
     beats: [
       [6, 24],   // codebase analyse
       [42, 54],  // mid-execute relay

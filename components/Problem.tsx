@@ -47,8 +47,9 @@ export default function Problem() {
         <article className="text-base leading-[1.75] text-muted md:text-[1.04rem]">
           <p className="drop-cap">
             Every coding agent has a strength the others don&apos;t. Claude
-            Code is best at high-level architecture and review. Gemini reads
-            enormous contexts. Codex is sharp on terminal and devops chores.
+            Code is best at high-level architecture and review. Antigravity
+            is one CLI that reaches Gemini&apos;s huge context, Claude, and
+            GPT-OSS. Codex is sharp on terminal and devops chores.
             A local model is free and private. Most working days you need
             two or three of them on the same problem at once &mdash; and the
             roster is yours to set, not a fixed lineup we picked for you.

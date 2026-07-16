@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s — theClub",
   },
   description:
-    "Run the coding agents you already pay for — Claude Code, Codex, Gemini CLI, local models — in parallel on one repo. Planned, reviewed, and merged autonomously, on your machine. In early access.",
+    "Run the coding agents you already pay for — Claude Code, Codex, Antigravity, local models — in parallel on one repo. Planned, reviewed, and merged autonomously, on your machine. In early access.",
   openGraph: {
     title: "theClub — one codebase, many minds",
     description:
