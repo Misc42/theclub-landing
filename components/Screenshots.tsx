@@ -17,11 +17,11 @@ type Plate = {
 const PLATES: ReadonlyArray<Plate> = [
   {
     src: asset("/screenshots/runsheet-merge.png"),
-    alt: "The REVIEW & MERGE band of a run sheet: six tasks, each with a reviewer score and the merge tier that landed it — clean, union, ai-semantic — one task marked GATE UNPROVEN with a Merge anyway button, one rejected and re-dispatched, and a PARTIAL — 1 PRESERVED verdict below.",
-    title: "See which tier landed it",
-    body: "Every task carries its review score and the merge tier that actually landed the diff — clean, union, or ai-semantic. T3 failed its gate: it sits at GATE UNPROVEN with a Merge anyway escape hatch, T5 was rejected and re-dispatched, and the run closes honest — PARTIAL, 1 preserved.",
-    w: 1960,
-    h: 1045,
+    alt: "The EXECUTE band of a run sheet — the AGY worker card running Gemini 3.1 Pro (High) over its own CLI, marked CLI-native and cloud, with a live terminal log underneath for the task 'Add src/subtract.js exporting a subtract(a, b) function.'",
+    title: "Every worker's card, live",
+    body: "Each worker gets one card — its model, its tier, cloud or local, CLI-native or API — and a live terminal streaming underneath. Here Antigravity's AGY runs Gemini 3.1 Pro at the high tier, straight over its own CLI, no key theClub ever sees.",
+    w: 1540,
+    h: 545,
     wide: true,
   },
   {

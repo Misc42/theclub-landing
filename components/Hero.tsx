@@ -36,17 +36,18 @@ export default function Hero() {
       <p className="mt-3.5 text-[13px] text-faint">
         Linux · Tauri + Rust · your keys, zero telemetry
       </p>
-      {/* The run sheet is the product's default view, so the hero shows a whole
-          one uncropped — plan, waves, merge tiers, verdict, top to bottom. */}
-      <div className="mx-auto mt-14 max-w-[960px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.3)]">
+      {/* The run sheet is the product's default view. This capture is the top
+          of one, uncropped — phase spine, plan, and the worker card that
+          picked the task up — not stretched or squeezed to fit the frame. */}
+      <div className="mx-auto mt-14 max-w-[760px] overflow-hidden rounded-t-2xl border border-b-0 border-border shadow-[0_40px_80px_-40px_rgba(0,0,0,0.3)]">
         <Image
           src={asset("/screenshots/runsheet-complete.png")}
-          alt="theClub's run sheet after a finished run — a phase spine down the left, then 01 PLAN with six tasks across three waves, 02 EXECUTE, 03 REVIEW & MERGE with a score and merge tier per task, and a PARTIAL — 1 PRESERVED verdict."
-          width={2800}
-          height={2768}
+          alt="theClub's run sheet after a finished run — a phase spine down the left, every phase green, 01 PLAN with a single task assigned to Antigravity, and 02 EXECUTE showing the AGY worker that ran it: Gemini 3.1 Pro, CLI-native, cloud."
+          width={1145}
+          height={935}
           priority
           className="block h-auto w-full"
-          sizes="(min-width: 1024px) 60rem, 100vw"
+          sizes="(min-width: 1024px) 47.5rem, 100vw"
         />
       </div>
     </section>
