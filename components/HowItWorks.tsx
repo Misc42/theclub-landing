@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { asset } from "@/lib/asset";
+
 const PHASES: ReadonlyArray<{ n: string; title: string; body: string }> = [
   {
     n: "01 · PLAN",
@@ -26,6 +29,19 @@ export default function HowItWorks() {
         <p className="mt-3 max-w-[560px] text-base text-muted">
           Not a worktree runner that leaves you reading every diff — the full
           loop runs itself.
+        </p>
+        <figure className="mt-10 overflow-hidden rounded-[14px] border border-border bg-bg shadow-sm">
+          <Image
+            src={asset("/screenshots/processflow.png")}
+            alt="theClub's 8-phase orchestration pipeline mid-run — a JWT refresh-token rotation goal at the Review stage: Analyze, Plan, Dispatch and Execute complete, Review active, Merge and Verify pending; 3 tasks approved, 2 in flight, parallel execution."
+            width={2466}
+            height={564}
+            className="h-auto w-full"
+            sizes="(max-width: 960px) 100vw, 960px"
+          />
+        </figure>
+        <p className="mt-2.5 text-center font-mono text-xs text-muted">
+          One run, eight phases — plan → execute → review → merged commit.
         </p>
         <div className="mt-11 grid gap-5 md:grid-cols-3">
           {PHASES.map((p) => (
