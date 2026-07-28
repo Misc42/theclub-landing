@@ -35,12 +35,10 @@ export default function Nav() {
           ))}
         </nav>
         <Link
-          href="https://github.com/Misc42/theClub"
-          target="_blank"
-          rel="noreferrer"
+          href="/#install"
           className="hidden rounded-lg bg-ink px-[18px] py-[9px] text-[13.5px] font-semibold text-bg transition-colors hover:bg-[#2A2A2E] md:inline-flex"
         >
-          Star on GitHub
+          Get theClub
         </Link>
         <button
           type="button"
@@ -72,13 +70,11 @@ export default function Nav() {
           </Link>
         ))}
         <Link
-          href="https://github.com/Misc42/theClub"
-          target="_blank"
-          rel="noreferrer"
+          href="/#install"
           className="mt-1 inline-flex justify-center rounded-lg bg-ink px-[18px] py-[9px] text-[13.5px] font-semibold text-bg"
           onClick={() => setOpen(false)}
         >
-          Star on GitHub
+          Get theClub
         </Link>
       </div>
     </header>

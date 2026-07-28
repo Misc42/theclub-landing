@@ -1,8 +1,9 @@
 import Link from "next/link";
 
+// theClub's own repository is private, so it is deliberately not linked here —
+// a visitor clicking it would only get a 404.
 const LINKS: ReadonlyArray<readonly [string, string]> = [
   ["Misc42 Labs", "https://misc42.github.io/misc42labs/"],
-  ["GitHub", "https://github.com/Misc42/theClub"],
   ["X", "https://x.com/misc42"],
 ];
 

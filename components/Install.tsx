@@ -3,9 +3,8 @@
 import { useState } from "react";
 
 const LINES: ReadonlyArray<string> = [
-  "git clone https://github.com/Misc42/theClub",
-  "cd theClub && npm install",
-  "npm run tauri dev",
+  "sudo dpkg -i theClub_0.7.6_amd64.deb",
+  "theclub",
 ];
 
 export default function Install() {
@@ -22,12 +21,13 @@ export default function Install() {
       <div className="wrap grid gap-14 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <h2 className="text-[38px] font-bold leading-[1.12] tracking-[-0.025em]">
-            Clone. Install. Run.
+            Install. Run.
           </h2>
           <p className="mt-4 text-[16.5px] leading-[1.55] text-muted">
-            v0.6.0 ships from source on Linux. Bring at least one agent — a
-            CLI you already pay for, or a free local Ollama model. Your keys
-            never touch theClub; agents talk to their providers directly.
+            v0.7.6 ships as a Linux package — .deb, .rpm or AppImage. Bring at
+            least one agent — a CLI you already pay for, or a free local Ollama
+            model. Your keys never touch theClub; agents talk to their providers
+            directly.
           </p>
           <p className="mt-3.5 text-sm text-faint">
             macOS &amp; Windows once Linux v1 hardens.
