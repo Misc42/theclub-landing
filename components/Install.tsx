@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const LINES: ReadonlyArray<string> = [
-  "sudo dpkg -i theClub_0.7.6_amd64.deb",
+  "sudo dpkg -i theClub_0.7.7_amd64.deb",
   "theclub",
 ];
 
@@ -24,7 +24,7 @@ export default function Install() {
             Install. Run.
           </h2>
           <p className="mt-4 text-[16.5px] leading-[1.55] text-muted">
-            v0.7.6 ships as a Linux package — .deb, .rpm or AppImage. Bring at
+            v0.7.7 ships as a Linux package — .deb, .rpm or AppImage. Bring at
             least one agent — a CLI you already pay for, or a free local Ollama
             model. Your keys never touch theClub; agents talk to their providers
             directly.
